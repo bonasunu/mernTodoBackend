@@ -16,14 +16,19 @@ try {
 app.use(express.json())
 
 app.post('/api/todos', async (req, res) => {
-  const body = req.body
+  try {
+    const body = req.body
 
-  const newTodo = new Todo({
-    description: body.description
-  })
+    const newTodo = new Todo({
+      description: body.description
+    })
 
-  const savedTodo = await newTodo.save()
-  res.json(savedTodo.toJSON())
+    const savedTodo = await newTodo.save()
+
+    res.json(savedTodo.toJSON())
+  } catch (error) {
+    console.error(error.message)
+  }
 })
 
 app.get('/api/todos', async (req, res) => {
