@@ -26,4 +26,15 @@ app.post('/api/todos', async (req, res) => {
   res.json(savedTodo.toJSON())
 })
 
+app.get('/api/todos', async (req, res) => {
+  try {
+    const todos = await Todo.find({})
+
+    res.json(todos)
+
+  } catch (error) {
+    console.error(error.message)
+  }
+})
+
 app.listen(config.PORT, () => console.log(`App listening PORT ${config.PORT}`))
