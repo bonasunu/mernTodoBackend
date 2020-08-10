@@ -42,4 +42,16 @@ app.get('/api/todos', async (req, res) => {
   }
 })
 
+app.delete('/api/todos/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+
+    await Todo.findByIdAndRemove(id)
+
+    res.json("todo deleted!")
+  } catch (error) {
+    console.error(error.message)
+  }
+})
+
 app.listen(config.PORT, () => console.log(`App listening PORT ${config.PORT}`))
