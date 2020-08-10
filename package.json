@@ -1,0 +1,24 @@
+{
+  "name": "merntodobackend",
+  "version": "1.0.0",
+  "description": "TODOs app using MongoDB, Express, NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonasunu/mernTodoBackend.git"
+  },
+  "keywords": [
+    "Mongo",
+    "Express",
+    "Node"
+  ],
+  "author": "Bonaventura Sunu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bonasunu/mernTodoBackend/issues"
+  },
+  "homepage": "https://github.com/bonasunu/mernTodoBackend#readme"
+}
